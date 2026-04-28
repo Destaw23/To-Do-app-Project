@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <title>Edit Todo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+<form method="POST" class="w-1/2 mx-auto mt-10">
+  {% csrf_token %}
+
+  <input name="title" value="{{todo.title}}" class="border p-2 w-full">
+  <textarea name="description" class="border p-2 w-full mt-2">{{todo.description}}</textarea>
+
+  <label>
+    Completed:
+    <input type="checkbox" name="is_completed" {% if todo.is_completed %}checked{% endif %}>
+  </label>
+
+  <button class="bg-blue-500 text-white px-4 py-2 mt-2">Update</button>
+</form>
+
+</body>
+</html>

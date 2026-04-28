@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Create Todo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <h1 class="text-3xl text-center mt-10">Create Todo</h1>
+
+    <form method="POST" class="w-1/2 mx-auto mt-10">
+        {% csrf_token %}
+
+        <input name="title" placeholder="Title" class="border p-2 w-full mb-2">
+        <input name="description" placeholder="Description" class="border p-2 w-full mb-2">
+        <input name="username" placeholder="Username" class="border p-2 w-full mb-4">
+
+        <button class="bg-green-500 text-white px-4 py-2">Create</button>
+    </form>
+
+</body>
+
+</html>
